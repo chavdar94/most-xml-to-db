@@ -4,10 +4,14 @@ import logging
 from fetch_xml import fetch_xml_data
 from parse_data import parse_xml_to_products
 from db import create_tables, insert_products
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+LOGGER_FILE = BASE_DIR / 'logger.log'
 
 # Configure logging
 logging.basicConfig(
-    filename='/path/to/your/app.log',  # Path to your log file
+    filename=LOGGER_FILE,  # Path to your log file
     level=logging.INFO,  # Set log level to INFO
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
