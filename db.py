@@ -20,27 +20,21 @@ def create_tables():
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute('''
-    CREATE TABLE IF NOT EXISTS products (
-        id INTEGER PRIMARY KEY,
-        uid INTEGER,
-        code TEXT,
-        name TEXT,
-        searchstring TEXT,
-        product_status TEXT,
-        haspromo INTEGER,
-        general_description TEXT,
-        classname TEXT,
-        classname_full TEXT,
-        class_id INTEGER,
-        price REAL,
-        currency TEXT,
-        main_picture_url TEXT,
-        manufacturer TEXT,
-        category TEXT,
-        subcategory TEXT,
-        partnum TEXT,
-        vendor_url TEXT,
-        properties JSONB
+    CREATE TABLE IF NOT EXISTS "Products" (
+        id TEXT PRIMARY KEY,
+        name TEXT NULL,
+        product_status TEXT NULL,
+        haspromo INTEGER NULL,
+        price REAL NULL,
+        currency TEXT NULL, 
+        main_picture_url TEXT NULL,
+        manufacturer TEXT NULL,
+        category TEXT NULL,
+        subcategory TEXT NULL,
+        partnum TEXT NULL,
+        vendor_url TEXT NULL,
+        properties JSON NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
     ''')
     conn.commit()
@@ -52,29 +46,22 @@ def insert_products(products):
     conn = get_db_connection()
     cursor = conn.cursor()
     insert_query = '''
-    INSERT INTO products (
-        id, uid, code, name, searchstring, product_status, haspromo, general_description, 
-        classname, classname_full, class_id, price, currency, main_picture_url, manufacturer, 
-        category, subcategory, partnum, vendor_url, properties
+    INSERT INTO "Products" (
+        id, name, product_status, haspromo, 
+        price, currency, main_picture_url, manufacturer, 
+        category, subcategory, partnum, vendor_url, properties, created_at
     ) VALUES (
-        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
     ) ON CONFLICT (id) DO NOTHING
     '''
 
     for product in products:
-        properties_json = json.dumps(product.get('properties')) if product.get('properties') else None
+        # properties_json = json.dumps(product.get('properties')) if product.get('properties') else None
         values = (
             product.get('id'),
-            product.get('uid'),
-            product.get('code'),
             product.get('name'),
-            product.get('searchstring'),
             product.get('product_status'),
             product.get('haspromo'),
-            product.get('general_description'),
-            product.get('classname'),
-            product.get('classname_full'),
-            product.get('class_id'),
             product.get('price'),
             product.get('currency'),
             product.get('main_picture_url'),
@@ -83,7 +70,8 @@ def insert_products(products):
             product.get('subcategory'),
             product.get('partnum'),
             product.get('vendor_url'),
-            properties_json
+            product.get('properties'),
+            product.get('created_at'),
         )
 
         try:

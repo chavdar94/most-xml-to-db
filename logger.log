@@ -1,0 +1,17 @@
+2024-07-24 02:02:20,786 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-07-24 02:02:37,121 - INFO - XML data fetched successfully
+2024-07-24 02:02:37,121 - INFO - Parsing XML data
+2024-07-24 02:02:37,509 - INFO - XML data parsed successfully
+2024-07-24 02:02:37,509 - INFO - Creating database tables
+2024-07-24 02:02:39,339 - INFO - Database tables created successfully
+2024-07-24 02:02:39,339 - INFO - Inserting products into the database
+2024-07-24 02:53:54,212 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-07-24 02:54:08,337 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-07-24 02:54:23,785 - INFO - XML data fetched successfully
+2024-07-24 02:54:23,785 - INFO - Parsing XML data
+2024-07-24 02:54:24,170 - INFO - XML data parsed successfully
+2024-07-24 02:54:24,170 - INFO - Creating database tables
+2024-07-24 02:54:24,201 - INFO - Database tables created successfully
+2024-07-24 02:54:24,201 - INFO - Inserting products into the database
+2024-07-24 02:54:25,196 - INFO - Products inserted successfully
+2024-07-24 02:54:25,197 - INFO - Total execution time: 16.86 seconds
