@@ -2,6 +2,17 @@
 import xml.etree.ElementTree as ET
 import json
 from datetime import datetime
+from lib import slugify
+
+slug_cache = {}
+
+
+def cached_slugify(value):
+    if value in slug_cache:
+        return slug_cache[value]
+    slug = slugify(value)
+    slug_cache[value] = slug
+    return slug
 
 
 def to_none_if_empty(value):
@@ -13,34 +24,48 @@ def parse_xml_to_products(xml_data):
     products = []
 
     for product in root.findall('.//product'):
-        properties = [
-            {
-                'name': prop.get('name'),
-                'value': prop.text
-            } for prop in product.find('properties').findall('property')
-        ]
+        try:
+            properties = [
+                {
+                    'name': prop.get('name'),
+                    'value': prop.text
+                } for prop in product.find('properties').findall('property')
+            ]
+        except AttributeError:
+            # If 'properties' or 'property' elements are missing
+            properties = []
 
-        product_info = {
-            'id': product.get('id'),
-            'name': product.find('name').text if product.find('name') is not None else None,
-            'product_status': product.find('product_status').text if product.find(
-                'product_status') is not None else None,
-            'haspromo': to_none_if_empty(
-                product.find('haspromo').text if product.find('haspromo') is not None else None),
-            'price': to_none_if_empty(product.find('price').text if product.find('price') is not None else None),
-            'currency': product.find('currency').text if product.find('currency') is not None else None,
-            'main_picture_url': product.find('main_picture_url').text if product.find(
-                'main_picture_url') is not None else None,
-            'manufacturer': product.find('manufacturer').text if product.find('manufacturer') is not None else None,
-            'category': to_none_if_empty(
-                product.find('category').text if product.find('category') is not None else None),
-            'subcategory': to_none_if_empty(
-                product.find('subcategory').text if product.find('subcategory') is not None else None),
-            'partnum': product.find('partnum').text if product.find('partnum') is not None else None,
-            'vendor_url': product.find('vendor_url').text if product.find('vendor_url') is not None else None,
-            'properties': json.dumps(properties),
-            'created_at': datetime.now()
-        }
-        products.append(product_info)
+        category_element = product.find('category')
+        category = to_none_if_empty(category_element.text if category_element is not None else None)
+
+        # Determine the slug
+        product_id = product.get('id')
+        slug = cached_slugify(category) if category else product_id
+
+        try:
+            product_info = {
+                'id': product_id,
+                'name': product.find('name').text if product.find('name') is not None else None,
+                'product_status': product.find('product_status').text if product.find(
+                    'product_status') is not None else None,
+                'haspromo': to_none_if_empty(
+                    product.find('haspromo').text if product.find('haspromo') is not None else None),
+                'price': to_none_if_empty(product.find('price').text if product.find('price') is not None else None),
+                'currency': product.find('currency').text if product.find('currency') is not None else None,
+                'main_picture_url': product.find('main_picture_url').text if product.find(
+                    'main_picture_url') is not None else None,
+                'manufacturer': product.find('manufacturer').text if product.find('manufacturer') is not None else None,
+                'category': category,
+                'subcategory': to_none_if_empty(
+                    product.find('subcategory').text if product.find('subcategory') is not None else None),
+                'partnum': product.find('partnum').text if product.find('partnum') is not None else None,
+                'vendor_url': product.find('vendor_url').text if product.find('vendor_url') is not None else None,
+                'properties': json.dumps(properties),
+                'created_at': datetime.now(),
+                'slug': slug
+            }
+            products.append(product_info)
+        except Exception as e:
+            print(f"Error inserting product ID: {product_id} - {str(e)}")
 
     return products

@@ -15,3 +15,80 @@
 2024-07-24 02:54:24,201 - INFO - Inserting products into the database
 2024-07-24 02:54:25,196 - INFO - Products inserted successfully
 2024-07-24 02:54:25,197 - INFO - Total execution time: 16.86 seconds
+2024-08-06 20:06:29,628 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:09:21,941 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:09:38,763 - INFO - XML data fetched successfully
+2024-08-06 20:09:38,763 - INFO - Parsing XML data
+2024-08-06 20:09:39,198 - INFO - XML data parsed successfully
+2024-08-06 20:09:39,198 - INFO - Creating database tables
+2024-08-06 20:09:39,199 - ERROR - An error occurred: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2024-08-06 20:12:11,229 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:12:22,303 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:12:39,866 - INFO - XML data fetched successfully
+2024-08-06 20:12:39,866 - INFO - Parsing XML data
+2024-08-06 20:12:40,276 - INFO - XML data parsed successfully
+2024-08-06 20:12:40,276 - INFO - Creating database tables
+2024-08-06 20:12:42,305 - ERROR - An error occurred: connection to server at "172.245.119.137", port 5432 failed: FATAL:  password authentication failed for user "choko"
+connection to server at "172.245.119.137", port 5432 failed: FATAL:  password authentication failed for user "choko"
+
+2024-08-06 20:13:33,645 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:13:50,987 - INFO - XML data fetched successfully
+2024-08-06 20:13:50,987 - INFO - Parsing XML data
+2024-08-06 20:13:51,398 - INFO - XML data parsed successfully
+2024-08-06 20:13:51,398 - INFO - Creating database tables
+2024-08-06 20:13:53,474 - INFO - Database tables created successfully
+2024-08-06 20:13:53,474 - INFO - Inserting products into the database
+2024-08-06 20:13:54,812 - INFO - Products inserted successfully
+2024-08-06 20:13:54,812 - INFO - Total execution time: 21.17 seconds
+2024-08-06 20:17:08,026 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:17:24,774 - INFO - XML data fetched successfully
+2024-08-06 20:17:24,774 - INFO - Parsing XML data
+2024-08-06 20:17:25,177 - INFO - XML data parsed successfully
+2024-08-06 20:17:25,178 - INFO - Creating database tables
+2024-08-06 20:17:27,079 - INFO - Database tables created successfully
+2024-08-06 20:17:27,079 - INFO - Inserting products into the database
+2024-08-06 20:17:28,310 - INFO - Products inserted successfully
+2024-08-06 20:17:28,310 - INFO - Total execution time: 20.28 seconds
+2024-08-06 20:19:09,845 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:19:27,520 - INFO - XML data fetched successfully
+2024-08-06 20:19:27,520 - INFO - Parsing XML data
+2024-08-06 20:19:27,929 - INFO - XML data parsed successfully
+2024-08-06 20:19:27,929 - INFO - Creating database tables
+2024-08-06 20:19:29,960 - INFO - Database tables created successfully
+2024-08-06 20:19:29,960 - INFO - Inserting products into the database
+2024-08-06 20:20:00,987 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:20:18,005 - INFO - XML data fetched successfully
+2024-08-06 20:20:18,006 - INFO - Parsing XML data
+2024-08-06 20:20:18,417 - INFO - XML data parsed successfully
+2024-08-06 20:20:18,417 - INFO - Creating database tables
+2024-08-06 20:20:20,442 - INFO - Database tables created successfully
+2024-08-06 20:20:20,442 - INFO - Inserting products into the database
+2024-08-06 20:24:58,201 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:25:15,507 - INFO - XML data fetched successfully
+2024-08-06 20:25:15,507 - INFO - Parsing XML data
+2024-08-06 20:25:16,263 - INFO - XML data parsed successfully
+2024-08-06 20:25:16,263 - INFO - Creating database tables
+2024-08-06 20:25:18,323 - INFO - Database tables created successfully
+2024-08-06 20:25:18,324 - INFO - Inserting products into the database
+2024-08-06 20:42:15,871 - INFO - Products inserted successfully
+2024-08-06 20:42:15,871 - INFO - Total execution time: 1037.67 seconds
+2024-08-06 20:45:54,957 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:46:11,968 - INFO - XML data fetched successfully
+2024-08-06 20:46:11,968 - INFO - Parsing XML data
+2024-08-06 20:46:13,095 - INFO - XML data parsed successfully
+2024-08-06 20:46:13,096 - INFO - Creating database tables
+2024-08-06 20:46:14,604 - INFO - Database tables created successfully
+2024-08-06 20:46:14,604 - INFO - Inserting products into the database
+2024-08-06 20:52:09,111 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
+2024-08-06 20:52:26,374 - INFO - XML data fetched successfully
+2024-08-06 20:52:26,375 - INFO - Parsing XML data
+2024-08-06 20:52:27,207 - INFO - XML data parsed successfully
+2024-08-06 20:52:27,207 - INFO - Creating database tables
+2024-08-06 20:52:29,246 - INFO - Database tables created successfully
+2024-08-06 20:52:29,246 - INFO - Inserting products into the database
+2024-08-06 21:09:46,351 - INFO - Products inserted successfully
+2024-08-06 21:09:46,351 - INFO - Total execution time: 1057.24 seconds
