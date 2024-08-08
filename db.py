@@ -25,6 +25,8 @@ def create_tables():
         product_status TEXT NULL,
         haspromo INTEGER NULL,
         price REAL NULL,
+        price_with_vat REAL NULL,
+        price_without_vat REAL NULL,
         currency TEXT NULL, 
         main_picture_url TEXT NULL,
         manufacturer TEXT NULL,
@@ -48,10 +50,10 @@ def insert_products(products):
     insert_query = '''
     INSERT INTO "Products" (
         id, name, product_status, haspromo, 
-        price, currency, main_picture_url, manufacturer, 
+        price, price_with_vat, price_without_vat, currency, main_picture_url, manufacturer, 
         category, subcategory, partnum, vendor_url, properties, created_at, slug
     ) VALUES (
-        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
     ) ON CONFLICT (id) DO NOTHING
     '''
 
@@ -63,6 +65,8 @@ def insert_products(products):
             product.get('product_status'),
             product.get('haspromo'),
             product.get('price'),
+            product.get('price_with_vat'),
+            product.get('price_without_vat'),
             product.get('currency'),
             product.get('main_picture_url'),
             product.get('manufacturer'),

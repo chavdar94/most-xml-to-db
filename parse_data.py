@@ -3,8 +3,10 @@ import xml.etree.ElementTree as ET
 import json
 from datetime import datetime
 from lib import slugify
+from parse_currency_rates import fetch_bnb_exchange_rates
 
 slug_cache = {}
+currencies = fetch_bnb_exchange_rates()
 
 
 def cached_slugify(value):
@@ -17,6 +19,20 @@ def cached_slugify(value):
 
 def to_none_if_empty(value):
     return None if value == '' else value
+
+
+def calculate_price_and_vat(price, currency):
+    try:
+        if currency in currencies:
+            price_bgn = float(price) * currencies[currency]
+            price_with_vat = price_bgn * 1.2
+            return price_with_vat, price_bgn
+        else:
+            print(f"Currency {currency} not found in exchange rates.")
+            return None
+    except (ValueError, TypeError) as e:
+        print(f"Error calculating price: {e}")
+        return None
 
 
 def parse_xml_to_products(xml_data):
@@ -43,6 +59,12 @@ def parse_xml_to_products(xml_data):
         slug = cached_slugify(category) if category else product_id
 
         try:
+            price = product.find('price').text if product.find('price') is not None else None
+            currency = product.find('currency').text if product.find('currency') is not None else None
+
+            price_with_vat, price_without_vat = calculate_price_and_vat(price, currency)
+            print(price_with_vat, price_without_vat)
+
             product_info = {
                 'id': product_id,
                 'name': product.find('name').text if product.find('name') is not None else None,
@@ -50,8 +72,10 @@ def parse_xml_to_products(xml_data):
                     'product_status') is not None else None,
                 'haspromo': to_none_if_empty(
                     product.find('haspromo').text if product.find('haspromo') is not None else None),
-                'price': to_none_if_empty(product.find('price').text if product.find('price') is not None else None),
-                'currency': product.find('currency').text if product.find('currency') is not None else None,
+                'price': price,
+                'price_with_vat': price_with_vat,
+                'price_without_vat': price_without_vat,
+                'currency': currency,
                 'main_picture_url': product.find('main_picture_url').text if product.find(
                     'main_picture_url') is not None else None,
                 'manufacturer': product.find('manufacturer').text if product.find('manufacturer') is not None else None,
