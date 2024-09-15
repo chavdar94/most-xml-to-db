@@ -1,4 +1,6 @@
 # db.py
+import json
+
 import psycopg2
 import os
 from dotenv import load_dotenv
@@ -36,7 +38,8 @@ def create_tables():
         vendor_url TEXT NULL,
         properties JSON NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        slug TEXT NOT NULL
+        slug TEXT NOT NULL,
+        gallery_urls JSON NULL
     )
     ''')
     conn.commit()
@@ -51,13 +54,14 @@ def insert_products(products):
     INSERT INTO "Products" (
         id, name, product_status, haspromo, 
         price, price_with_vat, price_without_vat, currency, main_picture_url, manufacturer, 
-        category, subcategory, partnum, vendor_url, properties, created_at, slug
+        category, subcategory, partnum, vendor_url, properties, created_at, slug, gallery_urls
     ) VALUES (
-        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
     ) ON CONFLICT (id) DO NOTHING
     '''
 
     for product in products:
+
         # properties_json = json.dumps(product.get('properties')) if product.get('properties') else None
         values = (
             product.get('id'),
@@ -76,7 +80,8 @@ def insert_products(products):
             product.get('vendor_url'),
             product.get('properties'),
             product.get('created_at'),
-            product.get('slug')
+            product.get('slug'),
+            product.get('gallery_urls')
         )
 
         try:

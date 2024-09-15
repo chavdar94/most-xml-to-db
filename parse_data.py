@@ -40,6 +40,7 @@ def parse_xml_to_products(xml_data):
     products = []
 
     for product in root.findall('.//product'):
+
         try:
             properties = [
                 {
@@ -48,7 +49,6 @@ def parse_xml_to_products(xml_data):
                 } for prop in product.find('properties').findall('property')
             ]
         except AttributeError:
-            # If 'properties' or 'property' elements are missing
             properties = []
 
         category_element = product.find('category')
@@ -63,7 +63,17 @@ def parse_xml_to_products(xml_data):
             currency = product.find('currency').text if product.find('currency') is not None else None
 
             price_with_vat, price_without_vat = calculate_price_and_vat(price, currency)
-            print(price_with_vat, price_without_vat)
+
+            # Extract gallery URLs for the current product
+
+            gallery = product.find('gallery')
+            if gallery is not None:
+                gallery_urls = [
+                    picture.find('picture_url').text
+                    for picture in gallery.findall('picture')
+                ]
+            else:
+                gallery_urls = []
 
             product_info = {
                 'id': product_id,
@@ -86,7 +96,8 @@ def parse_xml_to_products(xml_data):
                 'vendor_url': product.find('vendor_url').text if product.find('vendor_url') is not None else None,
                 'properties': json.dumps(properties),
                 'created_at': datetime.now(),
-                'slug': slug
+                'slug': slug,
+                'gallery_urls': json.dumps(gallery_urls),
             }
             products.append(product_info)
         except Exception as e:
