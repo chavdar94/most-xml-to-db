@@ -1,34 +1,36 @@
 # db.py
 import json
+import os
 
 import psycopg2
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
 
 def get_db_connection():
-    dbname = os.getenv('DB_NAME')
-    user = os.getenv('DB_USER')
-    password = os.getenv('DB_PASSWORD')
-    host = os.getenv('DB_HOST')
-    port = os.getenv('DB_PORT')
-    return psycopg2.connect(dbname=dbname, user=user, password=password, host=host, port=port)
+    dbname = os.getenv("DB_NAME")
+    user = os.getenv("DB_USER")
+    password = os.getenv("DB_PASSWORD")
+    host = os.getenv("DB_HOST")
+    port = os.getenv("DB_PORT")
+    return psycopg2.connect(
+        dbname=dbname, user=user, password=password, host=host, port=port
+    )
 
 
 def create_tables():
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute('''
+    cursor.execute("""
     CREATE TABLE IF NOT EXISTS "Products" (
         id TEXT PRIMARY KEY,
         name TEXT NULL,
         product_status TEXT NULL,
         haspromo INTEGER NULL,
         price REAL NULL,
-        price_with_vat REAL NULL,
-        price_without_vat REAL NULL,
+        price_eur REAL NULL,
+        price_bgn REAL NULL,
         currency TEXT NULL, 
         main_picture_url TEXT NULL,
         manufacturer TEXT NULL,
@@ -41,7 +43,7 @@ def create_tables():
         slug TEXT NOT NULL,
         gallery_urls JSON NULL
     )
-    ''')
+    """)
     conn.commit()
     cursor.close()
     conn.close()
@@ -50,38 +52,37 @@ def create_tables():
 def insert_products(products):
     conn = get_db_connection()
     cursor = conn.cursor()
-    insert_query = '''
+    insert_query = """
     INSERT INTO "Products" (
         id, name, product_status, haspromo, 
-        price, price_with_vat, price_without_vat, currency, main_picture_url, manufacturer, 
+        price, price_eur, price_bgn, currency, main_picture_url, manufacturer, 
         category, subcategory, partnum, vendor_url, properties, created_at, slug, gallery_urls
     ) VALUES (
         %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
     ) ON CONFLICT (id) DO NOTHING
-    '''
+    """
 
     for product in products:
-
         # properties_json = json.dumps(product.get('properties')) if product.get('properties') else None
         values = (
-            product.get('id'),
-            product.get('name'),
-            product.get('product_status'),
-            product.get('haspromo'),
-            product.get('price'),
-            product.get('price_with_vat'),
-            product.get('price_without_vat'),
-            product.get('currency'),
-            product.get('main_picture_url'),
-            product.get('manufacturer'),
-            product.get('category'),
-            product.get('subcategory'),
-            product.get('partnum'),
-            product.get('vendor_url'),
-            product.get('properties'),
-            product.get('created_at'),
-            product.get('slug'),
-            product.get('gallery_urls')
+            product.get("id"),
+            product.get("name"),
+            product.get("product_status"),
+            product.get("haspromo"),
+            product.get("price"),
+            product.get("price_eur"),
+            product.get("price_bgn"),
+            product.get("currency"),
+            product.get("main_picture_url"),
+            product.get("manufacturer"),
+            product.get("category"),
+            product.get("subcategory"),
+            product.get("partnum"),
+            product.get("vendor_url"),
+            product.get("properties"),
+            product.get("created_at"),
+            product.get("slug"),
+            product.get("gallery_urls"),
         )
 
         try:
