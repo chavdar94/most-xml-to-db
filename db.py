@@ -14,6 +14,7 @@ def get_db_connection():
     password = os.getenv("DB_PASSWORD")
     host = os.getenv("DB_HOST")
     port = os.getenv("DB_PORT")
+
     return psycopg2.connect(
         dbname=dbname, user=user, password=password, host=host, port=port
     )
@@ -27,21 +28,16 @@ def create_tables():
         id TEXT PRIMARY KEY,
         name TEXT NULL,
         product_status TEXT NULL,
-        haspromo INTEGER NULL,
         price REAL NULL,
         price_eur REAL NULL,
         price_bgn REAL NULL,
         currency TEXT NULL, 
-        main_picture_url TEXT NULL,
+        gallery TEXT[] NULL,
         manufacturer TEXT NULL,
         category TEXT NULL,
-        subcategory TEXT NULL,
-        partnum TEXT NULL,
-        vendor_url TEXT NULL,
-        properties JSON NULL,
+        properties TEXT[] NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        slug TEXT NOT NULL,
-        gallery_urls JSON NULL
+        slug TEXT NOT NULL
     )
     """)
     conn.commit()
@@ -54,12 +50,14 @@ def insert_products(products):
     cursor = conn.cursor()
     insert_query = """
     INSERT INTO "Products" (
-        id, name, product_status, haspromo, 
-        price, price_eur, price_bgn, currency, main_picture_url, manufacturer, 
-        category, subcategory, partnum, vendor_url, properties, created_at, slug, gallery_urls
-    ) VALUES (
-        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
-    ) ON CONFLICT (id) DO NOTHING
+        id, name, product_status,  
+        price, price_eur, price_bgn, currency, gallery, manufacturer, 
+        category, properties, created_at, slug
+    ) 
+    VALUES (
+        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+    ) 
+    ON CONFLICT (id) DO NOTHING
     """
 
     for product in products:
@@ -68,21 +66,16 @@ def insert_products(products):
             product.get("id"),
             product.get("name"),
             product.get("product_status"),
-            product.get("haspromo"),
             product.get("price"),
             product.get("price_eur"),
             product.get("price_bgn"),
             product.get("currency"),
-            product.get("main_picture_url"),
+            product.get("gallery"),
             product.get("manufacturer"),
             product.get("category"),
-            product.get("subcategory"),
-            product.get("partnum"),
-            product.get("vendor_url"),
             product.get("properties"),
             product.get("created_at"),
             product.get("slug"),
-            product.get("gallery_urls"),
         )
 
         try:

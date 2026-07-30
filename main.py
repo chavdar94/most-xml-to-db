@@ -10,27 +10,32 @@ BASE_DIR = Path(__file__).resolve().parent
 LOGGER_FILE = BASE_DIR / 'logger.log'
 
 # Configure logging
+
 logging.basicConfig(
-    filename=LOGGER_FILE,  # Path to your log file
-    level=logging.INFO,  # Set log level to INFO
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    filename=LOGGER_FILE,
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(funcName)s - %(message)s'
 )
+
+logger = logging.getLogger(__name__)
+
 
 
 def main():
-    url = "http://most.traveldatabank.biz/ProductXML"
+    url = "https://www.mostcomputers.bg/api/product/xml"
 
     start_time = time.time()
 
     try:
         # Fetch XML data
         logging.info("Starting to fetch XML data from %s", url)
-        xml_data = fetch_xml_data(url)
+        xml_data = fetch_xml_data(url, method="POST")
         logging.info("XML data fetched successfully")
 
         # Parse XML data to products
         logging.info("Parsing XML data")
         products = parse_xml_to_products(xml_data)
+        print(products[0])
         logging.info("XML data parsed successfully")
 
         # Create database tables

@@ -1,9 +1,8 @@
 # parse_data.py
-import json
 import xml.etree.ElementTree as ET
 from datetime import datetime
 
-from lib import slugify
+from lib import slugify, parse_xml_children
 from parse_currency_rates import fetch_bnb_exchange_rates
 
 slug_cache = {}
@@ -78,56 +77,29 @@ def parse_xml_to_products(xml_data):
 
             price_eur, price_bgn = calculate_price_and_vat(price, currency)
 
-            # Extract gallery URLs for the current product
-
-            gallery = product.find("gallery")
-            if gallery is not None:
-                gallery_urls = [
-                    picture.find("picture_url").text
-                    for picture in gallery.findall("picture")
-                ]
-            else:
-                gallery_urls = []
+            gallery = parse_xml_children(product.find("gallery"), "pictureUrl")
+            properties = parse_xml_children(product.find("properties"), "property")
 
             product_info = {
                 "id": product_id,
                 "name": product.find("name").text
-                if product.find("name") is not None
-                else None,
+                    if product.find("name") is not None
+                    else None,
                 "product_status": product.find("product_status").text
-                if product.find("product_status") is not None
-                else None,
-                "haspromo": to_none_if_empty(
-                    product.find("haspromo").text
-                    if product.find("haspromo") is not None
-                    else None
-                ),
+                    if product.find("product_status") is not None
+                    else None,
                 "price": price,
                 "price_eur": price_eur,
                 "price_bgn": price_bgn,
                 "currency": currency,
-                "main_picture_url": product.find("main_picture_url").text
-                if product.find("main_picture_url") is not None
-                else None,
+                "gallery": gallery,
                 "manufacturer": product.find("manufacturer").text
-                if product.find("manufacturer") is not None
-                else None,
+                    if product.find("manufacturer") is not None
+                    else None,
                 "category": category,
-                "subcategory": to_none_if_empty(
-                    product.find("subcategory").text
-                    if product.find("subcategory") is not None
-                    else None
-                ),
-                "partnum": product.find("partnum").text
-                if product.find("partnum") is not None
-                else None,
-                "vendor_url": product.find("vendor_url").text
-                if product.find("vendor_url") is not None
-                else None,
-                "properties": json.dumps(properties),
+                "properties": properties,
                 "created_at": datetime.now(),
                 "slug": slug,
-                "gallery_urls": json.dumps(gallery_urls),
             }
             products.append(product_info)
         except Exception as e:

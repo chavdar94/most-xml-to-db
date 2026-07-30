@@ -1,5 +1,7 @@
 import re
 import unicodedata
+from xml.etree import ElementTree as ET
+import json
 
 
 def slugify(value):
@@ -20,3 +22,22 @@ def slugify(value):
     # Trim hyphens from the start and end of the string
     value = value.strip('-')
     return value
+
+
+def parse_xml_children(parent_elem, child_tag):
+    if parent_elem is None:
+        return None
+
+    values = []
+    for child in parent_elem.findall(child_tag):
+        if len(child):  # child has nested elements
+            values.append({
+                subchild.tag: (subchild.text.strip() if subchild.text else None)
+                for subchild in child
+            })
+        else:
+            text = child.text.strip() if child.text else None
+            if text:
+                values.append(text)
+
+    return values or None
