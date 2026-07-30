@@ -35,7 +35,6 @@ def main():
         # Parse XML data to products
         logging.info("Parsing XML data")
         products = parse_xml_to_products(xml_data)
-        print(products[0])
         logging.info("XML data parsed successfully")
 
         # Create database tables

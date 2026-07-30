@@ -13,7 +13,7 @@ def fetch_bnb_exchange_rates():
     }
 
     url = "https://www.bnb.bg/Statistics/StExternalSector/StExchangeRates/StERForeignCurrencies/index.htm?download=xml"
-    xml_data = fetch_xml_data(url)
+    xml_data = fetch_xml_data(url, method="GET")
 
     root = ET.fromstring(xml_data)
     rows = root.findall(".//ROW")[1:]  # Skip the header row if necessary
