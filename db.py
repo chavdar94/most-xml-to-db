@@ -35,7 +35,7 @@ def create_tables():
         gallery TEXT[] NULL,
         manufacturer TEXT NULL,
         category TEXT NULL,
-        properties TEXT[] NULL,
+        properties JSONB NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         slug TEXT NOT NULL
     )
@@ -73,7 +73,7 @@ def insert_products(products):
             product.get("gallery"),
             product.get("manufacturer"),
             product.get("category"),
-            product.get("properties"),
+            json.dumps(product["properties"]) if product["properties"] is not None else None,
             product.get("created_at"),
             product.get("slug"),
         )

@@ -2,7 +2,7 @@
 import xml.etree.ElementTree as ET
 from datetime import datetime
 
-from lib import slugify, parse_xml_children
+from lib import slugify, parse_xml_children, parse_properties
 from parse_currency_rates import fetch_bnb_exchange_rates
 
 slug_cache = {}
@@ -78,7 +78,7 @@ def parse_xml_to_products(xml_data):
             price_eur, price_bgn = calculate_price_and_vat(price, currency)
 
             gallery = parse_xml_children(product.find("gallery"), "pictureUrl")
-            properties = parse_xml_children(product.find("properties"), "property")
+            properties = parse_properties(product.find("properties"))
 
             product_info = {
                 "id": product_id,

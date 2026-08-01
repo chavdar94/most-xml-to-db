@@ -41,3 +41,17 @@ def parse_xml_children(parent_elem, child_tag):
                 values.append(text)
 
     return values or None
+
+
+def parse_properties(properties_elem):
+    if properties_elem is None:
+        return None
+
+    result = {}
+    for prop in properties_elem.findall("property"):
+        name = prop.get("name")
+        text = prop.text.strip() if prop.text else None
+        if name and text:
+            result[name] = text
+
+    return result or None
