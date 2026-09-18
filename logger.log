@@ -1,122 +1,171 @@
-2024-07-24 02:02:20,786 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-07-24 02:02:37,121 - INFO - XML data fetched successfully
-2024-07-24 02:02:37,121 - INFO - Parsing XML data
-2024-07-24 02:02:37,509 - INFO - XML data parsed successfully
-2024-07-24 02:02:37,509 - INFO - Creating database tables
-2024-07-24 02:02:39,339 - INFO - Database tables created successfully
-2024-07-24 02:02:39,339 - INFO - Inserting products into the database
-2024-07-24 02:53:54,212 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-07-24 02:54:08,337 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-07-24 02:54:23,785 - INFO - XML data fetched successfully
-2024-07-24 02:54:23,785 - INFO - Parsing XML data
-2024-07-24 02:54:24,170 - INFO - XML data parsed successfully
-2024-07-24 02:54:24,170 - INFO - Creating database tables
-2024-07-24 02:54:24,201 - INFO - Database tables created successfully
-2024-07-24 02:54:24,201 - INFO - Inserting products into the database
-2024-07-24 02:54:25,196 - INFO - Products inserted successfully
-2024-07-24 02:54:25,197 - INFO - Total execution time: 16.86 seconds
-2024-08-06 20:06:29,628 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:09:21,941 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:09:38,763 - INFO - XML data fetched successfully
-2024-08-06 20:09:38,763 - INFO - Parsing XML data
-2024-08-06 20:09:39,198 - INFO - XML data parsed successfully
-2024-08-06 20:09:39,198 - INFO - Creating database tables
-2024-08-06 20:09:39,199 - ERROR - An error occurred: connection to server at "localhost" (::1), port 5432 failed: Connection refused
-	Is the server running on that host and accepting TCP/IP connections?
-connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
-	Is the server running on that host and accepting TCP/IP connections?
-
-2024-08-06 20:12:11,229 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:12:22,303 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:12:39,866 - INFO - XML data fetched successfully
-2024-08-06 20:12:39,866 - INFO - Parsing XML data
-2024-08-06 20:12:40,276 - INFO - XML data parsed successfully
-2024-08-06 20:12:40,276 - INFO - Creating database tables
-2024-08-06 20:12:42,305 - ERROR - An error occurred: connection to server at "172.245.119.137", port 5432 failed: FATAL:  password authentication failed for user "choko"
-connection to server at "172.245.119.137", port 5432 failed: FATAL:  password authentication failed for user "choko"
-
-2024-08-06 20:13:33,645 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:13:50,987 - INFO - XML data fetched successfully
-2024-08-06 20:13:50,987 - INFO - Parsing XML data
-2024-08-06 20:13:51,398 - INFO - XML data parsed successfully
-2024-08-06 20:13:51,398 - INFO - Creating database tables
-2024-08-06 20:13:53,474 - INFO - Database tables created successfully
-2024-08-06 20:13:53,474 - INFO - Inserting products into the database
-2024-08-06 20:13:54,812 - INFO - Products inserted successfully
-2024-08-06 20:13:54,812 - INFO - Total execution time: 21.17 seconds
-2024-08-06 20:17:08,026 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:17:24,774 - INFO - XML data fetched successfully
-2024-08-06 20:17:24,774 - INFO - Parsing XML data
-2024-08-06 20:17:25,177 - INFO - XML data parsed successfully
-2024-08-06 20:17:25,178 - INFO - Creating database tables
-2024-08-06 20:17:27,079 - INFO - Database tables created successfully
-2024-08-06 20:17:27,079 - INFO - Inserting products into the database
-2024-08-06 20:17:28,310 - INFO - Products inserted successfully
-2024-08-06 20:17:28,310 - INFO - Total execution time: 20.28 seconds
-2024-08-06 20:19:09,845 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:19:27,520 - INFO - XML data fetched successfully
-2024-08-06 20:19:27,520 - INFO - Parsing XML data
-2024-08-06 20:19:27,929 - INFO - XML data parsed successfully
-2024-08-06 20:19:27,929 - INFO - Creating database tables
-2024-08-06 20:19:29,960 - INFO - Database tables created successfully
-2024-08-06 20:19:29,960 - INFO - Inserting products into the database
-2024-08-06 20:20:00,987 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:20:18,005 - INFO - XML data fetched successfully
-2024-08-06 20:20:18,006 - INFO - Parsing XML data
-2024-08-06 20:20:18,417 - INFO - XML data parsed successfully
-2024-08-06 20:20:18,417 - INFO - Creating database tables
-2024-08-06 20:20:20,442 - INFO - Database tables created successfully
-2024-08-06 20:20:20,442 - INFO - Inserting products into the database
-2024-08-06 20:24:58,201 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:25:15,507 - INFO - XML data fetched successfully
-2024-08-06 20:25:15,507 - INFO - Parsing XML data
-2024-08-06 20:25:16,263 - INFO - XML data parsed successfully
-2024-08-06 20:25:16,263 - INFO - Creating database tables
-2024-08-06 20:25:18,323 - INFO - Database tables created successfully
-2024-08-06 20:25:18,324 - INFO - Inserting products into the database
-2024-08-06 20:42:15,871 - INFO - Products inserted successfully
-2024-08-06 20:42:15,871 - INFO - Total execution time: 1037.67 seconds
-2024-08-06 20:45:54,957 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:46:11,968 - INFO - XML data fetched successfully
-2024-08-06 20:46:11,968 - INFO - Parsing XML data
-2024-08-06 20:46:13,095 - INFO - XML data parsed successfully
-2024-08-06 20:46:13,096 - INFO - Creating database tables
-2024-08-06 20:46:14,604 - INFO - Database tables created successfully
-2024-08-06 20:46:14,604 - INFO - Inserting products into the database
-2024-08-06 20:52:09,111 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-06 20:52:26,374 - INFO - XML data fetched successfully
-2024-08-06 20:52:26,375 - INFO - Parsing XML data
-2024-08-06 20:52:27,207 - INFO - XML data parsed successfully
-2024-08-06 20:52:27,207 - INFO - Creating database tables
-2024-08-06 20:52:29,246 - INFO - Database tables created successfully
-2024-08-06 20:52:29,246 - INFO - Inserting products into the database
-2024-08-06 21:09:46,351 - INFO - Products inserted successfully
-2024-08-06 21:09:46,351 - INFO - Total execution time: 1057.24 seconds
-2024-08-07 15:05:37,204 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-07 15:10:49,944 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-07 15:11:07,950 - INFO - XML data fetched successfully
-2024-08-07 15:11:07,950 - INFO - Parsing XML data
-2024-08-07 15:11:08,323 - INFO - XML data parsed successfully
-2024-08-07 15:11:08,323 - INFO - Creating database tables
-2024-08-07 15:11:10,258 - INFO - Database tables created successfully
-2024-08-07 15:11:10,258 - INFO - Inserting products into the database
-2024-08-07 15:11:11,692 - INFO - Products inserted successfully
-2024-08-07 15:11:11,692 - INFO - Total execution time: 21.75 seconds
-2024-08-07 15:11:52,566 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-07 15:12:09,790 - INFO - XML data fetched successfully
-2024-08-07 15:12:09,790 - INFO - Parsing XML data
-2024-08-07 15:12:10,199 - INFO - XML data parsed successfully
-2024-08-07 15:12:10,200 - INFO - Creating database tables
-2024-08-07 15:12:11,903 - INFO - Database tables created successfully
-2024-08-07 15:12:11,903 - INFO - Inserting products into the database
-2024-08-07 15:27:44,673 - INFO - Products inserted successfully
-2024-08-07 15:27:44,681 - INFO - Total execution time: 952.12 seconds
-2024-08-07 15:31:08,883 - INFO - Starting to fetch XML data from http://most.traveldatabank.biz/ProductXML
-2024-08-07 15:31:26,284 - INFO - XML data fetched successfully
-2024-08-07 15:31:26,284 - INFO - Parsing XML data
-2024-08-07 15:31:26,750 - INFO - XML data parsed successfully
-2024-08-07 15:31:26,750 - INFO - Creating database tables
-2024-08-07 15:31:28,272 - INFO - Database tables created successfully
-2024-08-07 15:31:28,272 - INFO - Inserting products into the database
-2024-08-07 15:47:05,121 - INFO - Products inserted successfully
-2024-08-07 15:47:05,121 - INFO - Total execution time: 956.24 seconds
+2026-07-30 22:57:23,012 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-07-30 22:57:27,194 - INFO - main.py:33 - main - XML data fetched successfully
+2026-07-30 22:57:27,194 - INFO - main.py:36 - main - Parsing XML data
+2026-07-30 22:57:27,454 - INFO - main.py:38 - main - XML data parsed successfully
+2026-07-30 22:57:27,454 - INFO - main.py:41 - main - Creating database tables
+2026-07-30 22:57:27,476 - INFO - main.py:43 - main - Database tables created successfully
+2026-07-30 22:57:27,476 - INFO - main.py:46 - main - Inserting products into the database
+2026-07-30 22:57:27,604 - INFO - main.py:48 - main - Products inserted successfully
+2026-07-30 22:57:27,604 - INFO - main.py:52 - main - Total execution time: 4.59 seconds
+2026-07-30 22:59:27,630 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-07-30 22:59:31,731 - INFO - main.py:33 - main - XML data fetched successfully
+2026-07-30 22:59:31,732 - INFO - main.py:36 - main - Parsing XML data
+2026-07-30 22:59:31,996 - INFO - main.py:39 - main - XML data parsed successfully
+2026-07-30 22:59:31,996 - INFO - main.py:42 - main - Creating database tables
+2026-07-30 22:59:32,008 - INFO - main.py:44 - main - Database tables created successfully
+2026-07-30 22:59:32,008 - INFO - main.py:47 - main - Inserting products into the database
+2026-07-30 22:59:32,114 - INFO - main.py:49 - main - Products inserted successfully
+2026-07-30 22:59:32,114 - INFO - main.py:53 - main - Total execution time: 4.48 seconds
+2026-07-30 23:01:42,127 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-07-30 23:01:46,339 - INFO - main.py:33 - main - XML data fetched successfully
+2026-07-30 23:01:46,339 - INFO - main.py:36 - main - Parsing XML data
+2026-07-30 23:01:46,615 - INFO - main.py:39 - main - XML data parsed successfully
+2026-07-30 23:01:46,615 - INFO - main.py:42 - main - Creating database tables
+2026-07-30 23:01:46,628 - INFO - main.py:44 - main - Database tables created successfully
+2026-07-30 23:01:46,628 - INFO - main.py:47 - main - Inserting products into the database
+2026-07-30 23:01:52,463 - INFO - main.py:49 - main - Products inserted successfully
+2026-07-30 23:01:52,463 - INFO - main.py:53 - main - Total execution time: 10.34 seconds
+2026-07-30 23:02:17,503 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-07-30 23:02:21,068 - INFO - main.py:33 - main - XML data fetched successfully
+2026-07-30 23:02:21,068 - INFO - main.py:36 - main - Parsing XML data
+2026-07-30 23:02:21,298 - INFO - main.py:39 - main - XML data parsed successfully
+2026-07-30 23:02:21,298 - INFO - main.py:42 - main - Creating database tables
+2026-07-30 23:02:21,310 - INFO - main.py:44 - main - Database tables created successfully
+2026-07-30 23:02:21,310 - INFO - main.py:47 - main - Inserting products into the database
+2026-07-30 23:02:26,463 - INFO - main.py:49 - main - Products inserted successfully
+2026-07-30 23:02:26,463 - INFO - main.py:53 - main - Total execution time: 8.96 seconds
+2026-07-30 23:03:57,136 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-07-30 23:04:01,343 - INFO - main.py:33 - main - XML data fetched successfully
+2026-07-30 23:04:01,344 - INFO - main.py:36 - main - Parsing XML data
+2026-07-30 23:04:01,724 - INFO - main.py:39 - main - XML data parsed successfully
+2026-07-30 23:04:01,724 - INFO - main.py:42 - main - Creating database tables
+2026-07-30 23:04:01,756 - INFO - main.py:44 - main - Database tables created successfully
+2026-07-30 23:04:01,757 - INFO - main.py:47 - main - Inserting products into the database
+2026-07-30 23:04:07,716 - INFO - main.py:49 - main - Products inserted successfully
+2026-07-30 23:04:07,716 - INFO - main.py:53 - main - Total execution time: 10.58 seconds
+2026-07-30 23:04:21,783 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-07-30 23:04:25,263 - INFO - main.py:33 - main - XML data fetched successfully
+2026-07-30 23:04:25,264 - INFO - main.py:36 - main - Parsing XML data
+2026-07-30 23:04:25,653 - INFO - main.py:39 - main - XML data parsed successfully
+2026-07-30 23:04:25,653 - INFO - main.py:42 - main - Creating database tables
+2026-07-30 23:04:25,665 - INFO - main.py:44 - main - Database tables created successfully
+2026-07-30 23:04:25,665 - INFO - main.py:47 - main - Inserting products into the database
+2026-07-30 23:04:31,423 - INFO - main.py:49 - main - Products inserted successfully
+2026-07-30 23:04:31,423 - INFO - main.py:53 - main - Total execution time: 9.64 seconds
+2026-07-30 23:10:17,489 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-07-30 23:10:21,859 - INFO - main.py:33 - main - XML data fetched successfully
+2026-07-30 23:10:21,860 - INFO - main.py:36 - main - Parsing XML data
+2026-07-30 23:10:22,094 - INFO - main.py:39 - main - XML data parsed successfully
+2026-07-30 23:10:22,094 - INFO - main.py:42 - main - Creating database tables
+2026-07-30 23:10:22,106 - INFO - main.py:44 - main - Database tables created successfully
+2026-07-30 23:10:22,106 - INFO - main.py:47 - main - Inserting products into the database
+2026-07-30 23:10:27,393 - INFO - main.py:49 - main - Products inserted successfully
+2026-07-30 23:10:27,393 - INFO - main.py:53 - main - Total execution time: 9.90 seconds
+2026-07-30 23:11:15,904 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-07-30 23:11:19,437 - INFO - main.py:33 - main - XML data fetched successfully
+2026-07-30 23:11:19,438 - INFO - main.py:36 - main - Parsing XML data
+2026-07-30 23:11:19,670 - INFO - main.py:39 - main - XML data parsed successfully
+2026-07-30 23:11:19,670 - INFO - main.py:42 - main - Creating database tables
+2026-07-30 23:11:19,682 - INFO - main.py:44 - main - Database tables created successfully
+2026-07-30 23:11:19,682 - INFO - main.py:47 - main - Inserting products into the database
+2026-07-30 23:11:24,907 - INFO - main.py:49 - main - Products inserted successfully
+2026-07-30 23:11:24,907 - INFO - main.py:53 - main - Total execution time: 9.00 seconds
+2026-07-30 23:11:49,658 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-07-30 23:11:53,145 - INFO - main.py:33 - main - XML data fetched successfully
+2026-07-30 23:11:53,145 - INFO - main.py:36 - main - Parsing XML data
+2026-07-30 23:11:53,379 - INFO - main.py:39 - main - XML data parsed successfully
+2026-07-30 23:11:53,379 - INFO - main.py:42 - main - Creating database tables
+2026-07-30 23:11:53,406 - INFO - main.py:44 - main - Database tables created successfully
+2026-07-30 23:11:53,406 - INFO - main.py:47 - main - Inserting products into the database
+2026-07-30 23:11:55,741 - INFO - main.py:49 - main - Products inserted successfully
+2026-07-30 23:11:55,742 - INFO - main.py:53 - main - Total execution time: 6.08 seconds
+2026-07-30 23:40:24,461 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-07-30 23:40:29,478 - INFO - main.py:33 - main - XML data fetched successfully
+2026-07-30 23:40:29,478 - INFO - main.py:36 - main - Parsing XML data
+2026-07-30 23:40:29,704 - INFO - main.py:38 - main - XML data parsed successfully
+2026-07-30 23:40:29,704 - INFO - main.py:41 - main - Creating database tables
+2026-07-30 23:40:29,718 - INFO - main.py:43 - main - Database tables created successfully
+2026-07-30 23:40:29,718 - INFO - main.py:46 - main - Inserting products into the database
+2026-07-30 23:40:32,062 - INFO - main.py:48 - main - Products inserted successfully
+2026-07-30 23:40:32,062 - INFO - main.py:52 - main - Total execution time: 7.60 seconds
+2026-08-01 08:02:57,306 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-08-01 08:03:01,651 - INFO - main.py:33 - main - XML data fetched successfully
+2026-08-01 08:03:01,651 - INFO - main.py:36 - main - Parsing XML data
+2026-08-01 08:03:01,887 - INFO - main.py:38 - main - XML data parsed successfully
+2026-08-01 08:03:01,887 - INFO - main.py:41 - main - Creating database tables
+2026-08-01 08:03:01,917 - INFO - main.py:43 - main - Database tables created successfully
+2026-08-01 08:03:01,917 - INFO - main.py:46 - main - Inserting products into the database
+2026-08-01 08:03:04,267 - INFO - main.py:48 - main - Products inserted successfully
+2026-08-01 08:03:04,267 - INFO - main.py:52 - main - Total execution time: 6.96 seconds
+2026-08-01 19:24:56,427 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-08-01 19:25:01,483 - INFO - main.py:33 - main - XML data fetched successfully
+2026-08-01 19:25:01,483 - INFO - main.py:36 - main - Parsing XML data
+2026-08-01 19:25:01,709 - INFO - main.py:38 - main - XML data parsed successfully
+2026-08-01 19:25:01,709 - INFO - main.py:41 - main - Creating database tables
+2026-08-01 19:25:01,751 - INFO - main.py:43 - main - Database tables created successfully
+2026-08-01 19:25:01,751 - INFO - main.py:46 - main - Inserting products into the database
+2026-08-01 19:25:07,811 - INFO - main.py:48 - main - Products inserted successfully
+2026-08-01 19:25:07,811 - INFO - main.py:52 - main - Total execution time: 11.38 seconds
+2026-08-01 19:26:33,344 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-08-01 19:26:36,706 - INFO - main.py:33 - main - XML data fetched successfully
+2026-08-01 19:26:36,706 - INFO - main.py:36 - main - Parsing XML data
+2026-08-01 19:26:36,950 - INFO - main.py:38 - main - XML data parsed successfully
+2026-08-01 19:26:36,950 - INFO - main.py:41 - main - Creating database tables
+2026-08-01 19:26:36,962 - INFO - main.py:43 - main - Database tables created successfully
+2026-08-01 19:26:36,962 - INFO - main.py:46 - main - Inserting products into the database
+2026-08-01 19:26:42,895 - INFO - main.py:48 - main - Products inserted successfully
+2026-08-01 19:26:42,895 - INFO - main.py:52 - main - Total execution time: 9.55 seconds
+2026-08-01 19:31:03,952 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-08-01 19:31:09,463 - INFO - main.py:33 - main - XML data fetched successfully
+2026-08-01 19:31:09,463 - INFO - main.py:36 - main - Parsing XML data
+2026-08-01 19:31:09,690 - INFO - main.py:38 - main - XML data parsed successfully
+2026-08-01 19:31:09,690 - INFO - main.py:41 - main - Creating database tables
+2026-08-01 19:31:09,702 - INFO - main.py:43 - main - Database tables created successfully
+2026-08-01 19:31:09,702 - INFO - main.py:46 - main - Inserting products into the database
+2026-08-01 19:31:14,960 - INFO - main.py:48 - main - Products inserted successfully
+2026-08-01 19:31:14,960 - INFO - main.py:52 - main - Total execution time: 11.01 seconds
+2026-08-01 19:31:47,729 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-08-01 19:31:52,546 - INFO - main.py:33 - main - XML data fetched successfully
+2026-08-01 19:31:52,546 - INFO - main.py:36 - main - Parsing XML data
+2026-08-01 19:31:52,781 - INFO - main.py:38 - main - XML data parsed successfully
+2026-08-01 19:31:52,781 - INFO - main.py:41 - main - Creating database tables
+2026-08-01 19:31:52,793 - INFO - main.py:43 - main - Database tables created successfully
+2026-08-01 19:31:52,793 - INFO - main.py:46 - main - Inserting products into the database
+2026-08-01 19:31:55,134 - INFO - main.py:48 - main - Products inserted successfully
+2026-08-01 19:31:55,134 - INFO - main.py:52 - main - Total execution time: 7.40 seconds
+2026-08-01 21:23:12,449 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-08-01 21:23:34,145 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-08-01 21:23:37,979 - INFO - main.py:33 - main - XML data fetched successfully
+2026-08-01 21:23:37,979 - INFO - main.py:36 - main - Parsing XML data
+2026-08-01 21:23:38,251 - INFO - main.py:38 - main - XML data parsed successfully
+2026-08-01 21:23:38,251 - INFO - main.py:41 - main - Creating database tables
+2026-08-01 21:23:38,272 - INFO - main.py:43 - main - Database tables created successfully
+2026-08-01 21:23:38,272 - INFO - main.py:46 - main - Inserting products into the database
+2026-08-01 21:23:39,252 - INFO - main.py:48 - main - Products inserted successfully
+2026-08-01 21:23:39,252 - INFO - main.py:52 - main - Total execution time: 5.11 seconds
+2026-08-01 21:24:49,686 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-08-01 21:24:53,057 - INFO - main.py:33 - main - XML data fetched successfully
+2026-08-01 21:24:53,057 - INFO - main.py:36 - main - Parsing XML data
+2026-08-01 21:24:53,307 - INFO - main.py:38 - main - XML data parsed successfully
+2026-08-01 21:24:53,307 - INFO - main.py:41 - main - Creating database tables
+2026-08-01 21:24:53,320 - INFO - main.py:43 - main - Database tables created successfully
+2026-08-01 21:24:53,320 - INFO - main.py:46 - main - Inserting products into the database
+2026-08-01 21:24:53,338 - ERROR - main.py:55 - main - An error occurred: name 'Json' is not defined
+2026-08-01 21:25:36,546 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-08-01 21:25:42,503 - INFO - main.py:33 - main - XML data fetched successfully
+2026-08-01 21:25:42,503 - INFO - main.py:36 - main - Parsing XML data
+2026-08-01 21:25:42,741 - INFO - main.py:38 - main - XML data parsed successfully
+2026-08-01 21:25:42,742 - INFO - main.py:41 - main - Creating database tables
+2026-08-01 21:25:42,754 - INFO - main.py:43 - main - Database tables created successfully
+2026-08-01 21:25:42,754 - INFO - main.py:46 - main - Inserting products into the database
+2026-08-01 21:25:45,110 - INFO - main.py:48 - main - Products inserted successfully
+2026-08-01 21:25:45,110 - INFO - main.py:52 - main - Total execution time: 8.56 seconds
+2026-08-01 21:28:39,419 - INFO - main.py:31 - main - Starting to fetch XML data from https://www.mostcomputers.bg/api/product/xml
+2026-08-01 21:28:44,605 - INFO - main.py:33 - main - XML data fetched successfully
+2026-08-01 21:28:44,605 - INFO - main.py:36 - main - Parsing XML data
+2026-08-01 21:28:44,837 - INFO - main.py:38 - main - XML data parsed successfully
+2026-08-01 21:28:44,837 - INFO - main.py:41 - main - Creating database tables
+2026-08-01 21:28:44,858 - INFO - main.py:43 - main - Database tables created successfully
+2026-08-01 21:28:44,858 - INFO - main.py:46 - main - Inserting products into the database
+2026-08-01 21:28:47,236 - INFO - main.py:48 - main - Products inserted successfully
+2026-08-01 21:28:47,236 - INFO - main.py:52 - main - Total execution time: 7.82 seconds

@@ -1,28 +1,28 @@
 # main.py
-import time
 import logging
-from fetch_xml import fetch_xml_data
-from parse_data import parse_xml_to_products
-from db import create_tables, insert_products
+import time
 from pathlib import Path
 
+from db import create_tables, insert_products
+from fetch_xml import fetch_xml_data
+from parse_data import parse_xml_to_products
+
 BASE_DIR = Path(__file__).resolve().parent
-LOGGER_FILE = BASE_DIR / 'logger.log'
+LOGGER_FILE = BASE_DIR / "logger.log"
 
 # Configure logging
 
 logging.basicConfig(
     filename=LOGGER_FILE,
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(funcName)s - %(message)s'
+    format="%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(funcName)s - %(message)s",
 )
 
 logger = logging.getLogger(__name__)
 
 
-
 def main():
-    url = "https://www.mostcomputers.bg/api/product/xml"
+    url = "https://portal.mostbg.com/api/product/xml/all?currency=EUR"
 
     start_time = time.time()
 
@@ -57,6 +57,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
