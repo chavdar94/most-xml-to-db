@@ -29,7 +29,7 @@ def main():
     try:
         # Fetch XML data
         logging.info("Starting to fetch XML data from %s", url)
-        xml_data = fetch_xml_data(url, method="POST")
+        xml_data = fetch_xml_data(url, method="GET")
         logging.info("XML data fetched successfully")
 
         # Parse XML data to products
